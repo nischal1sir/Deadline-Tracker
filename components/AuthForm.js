@@ -28,7 +28,11 @@ export default function AuthForm() {
           body: JSON.stringify(form),
         });
         const data = await res.json();
-        if (!res.ok) throw new Error(data.error || "Registration failed.");
+        if (!res.ok) {
+          const detailMsg = data.details ? ` (${data.details})` : "";
+          const codeMsg = data.code ? ` [Code: ${data.code}]` : "";
+          throw new Error(`${data.error}${detailMsg}${codeMsg}` || "Registration failed.");
+        }
         // Auto login after register
       }
 
