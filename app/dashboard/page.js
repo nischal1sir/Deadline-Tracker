@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Plus, LogOut, Target, RefreshCw } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import CreateProjectModal from "@/components/CreateProjectModal";
+import LiveClock from "@/components/LiveClock";
 import styles from "./page.module.css";
 
 export default function Dashboard() {
@@ -97,6 +98,8 @@ export default function Dashboard() {
             <p className={styles.quoteAuthor}>— {quote.author}</p>
           </div>
         )}
+        
+        <LiveClock />
 
         {/* Page header */}
         <div className={styles.pageHeader}>
