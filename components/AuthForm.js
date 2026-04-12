@@ -76,7 +76,7 @@ export default function AuthForm() {
             <label className={styles.label}>Full Name</label>
             <input
               className="glass-input"
-              placeholder="John Doe"
+              placeholder="Nischal Rai"
               value={form.name}
               onChange={(e) => update("name", e.target.value)}
               required
